@@ -29,16 +29,12 @@
     text-align: center;
   }
 
-  #inicio .foto {
+  .perfil-foto {
     margin-top: 50px;
   }
 
   .container {
     width: 95%;
-  }
-
-  #sobre {
-    gap: 0;
   }
 
   #habilidades h1 {
@@ -70,8 +66,21 @@
     background-color: #f9b141;
   }
 
-  #habilidades > p {
+  #habilidades > p, #projetos-mouse {
     display: none;
+  }
+
+  .icons > div:hover {
+    width: 100%;
+  }
+
+  .projeto:hover {
+    height: var(--tamanhoprojeto);
+    width: calc(var(--tamanhoprojeto) - 100px);
+  }
+
+  .informacoes-projeto{
+    opacity: 0.8;
   }
 
   footer{

@@ -5,22 +5,20 @@
     rgba(2, 0, 36, 1) 0%,
     rgba(32, 1, 66, 1) 66%,
     rgba(32, 11, 101, 1) 100%
-  );
-  /* Padrão de cores que aparece no inicio */
+  ); /* Padrão de cores que aparece no inicio */
   --corbase2: linear-gradient(
     167deg,
     rgba(23, 8, 29, 1) 0%,
     rgba(14, 20, 47, 1) 100%
-  );
-  /* Padrão de cores do header */
+  ); /* Padrão de cores do header */
   --corbase3: grey;
-  --imagemtamanho: 200px;
-  /* Tamanho base dos icones de linguagem */
-  --tamanhoprojeto: 330px;
-  /* Tamanho inicial da preview dos projetos */
+  --imagemtamanho: 200px; /* Tamanho base dos icones de linguagem */
+  --tamanhoprojeto: 350px; /* Tamanho inicial da preview dos projetos */
   --alturadasection: 100vh;
 }
+
 html{scroll-behavior: smooth;}
+
 * {
   margin: 0;
   padding: 0;
@@ -78,13 +76,15 @@ section {
 
 section:nth-of-type(2n + 1){background: var(--corbase1);}
 
-.foto {
-  width: 300px;
-  height: 300px;
-  border: 1px solid white;
+.perfil-foto{
+  width: 330px;
+  height: 330px;
+  border: 1px solid rgb(111, 0, 255);
   border-radius: 50%;
-  box-shadow: 3px 3px 5px black;
-}
+  box-shadow: 5px 5px 5px black;
+  background-image: url(../src/perfil.webp);
+  background-position: bottom;
+  background-size: cover;}
 
 #inicio {
   text-align: left;
@@ -125,8 +125,18 @@ h1 {
 /* Sobre */
 
 #sobre {
-  gap: 20px;
+  gap: 30px;
 }
+
+.sobre-foto{
+  width: 270px;
+  height: 270px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 50%;
+  box-shadow: -2px 7px 10px black;
+  background-image: url(../src/praia-costas.webp);
+  background-position: right bottom;
+  background-size: cover;}
 
 /* Projetos */
 
@@ -136,10 +146,11 @@ h1 {
 
 .container-projetos {
   width: 100%;
+  min-height: calc(var(--tamanhoprojeto) + 30px);
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
-  margin-top: 50px;
+  margin: 25px 0;
 }
 
 .projeto {
@@ -153,9 +164,11 @@ h1 {
   align-content: center;
   justify-items: center;
   overflow: hidden;
+  background-position: center;
+  background-size: cover;
 }
 
-.projeto:hover {
+.projeto:hover, .informacoes-projeto:hover {
   height: calc(var(--tamanhoprojeto) + 15px);
   width: calc(var(--tamanhoprojeto) - 85px);
 }
@@ -172,6 +185,43 @@ h1 {
 
 .breve p{
   letter-spacing: 0.5rem;
+}
+
+.informacoes-projeto{
+  background-color: black;
+  width: inherit;
+  height: inherit;
+  padding: 4%;
+  opacity: 0;
+  transition: 0.3s;
+  line-height: 25px;
+}
+
+.informacoes-projeto > a{
+  padding: 0;
+  border-radius: 0;
+}
+
+.informacoes-projeto h1{
+  font-size: 21px;
+  padding-top: 20px;
+  margin-bottom: 15px;
+}
+
+.informacoes-projeto:hover{
+  opacity: 0.9;
+}
+
+.pj1{
+  background-image: url(../src/landing-page-preview.webp);
+}
+
+.pj2{
+  background-image: url(../src/youtube-preview.webp);
+}
+
+.pj3{
+  background-image: url(../src/form-preview.webp);
 }
 
 /* Habilidades */
